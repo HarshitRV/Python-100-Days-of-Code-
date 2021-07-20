@@ -1,0 +1,6 @@
+print("Welcome to the tip calculator")
+bill = float(input("What was the total bill : "))
+tip = int(input("What percentage of bill would you like to pay? 10,12,15 : "))
+bill += bill*(tip/100)
+split = int(input("How many people to split : "))
+print(f"Each person should pay {round(bill/split , 2)}")
