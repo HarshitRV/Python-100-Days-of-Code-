@@ -99,11 +99,6 @@ def stand():
     for i in range(len(player_cards)):
         print(a.card_art[player_cards[i]])
 
-    print(f"Dealer Cards:\n")
-
-    for j in range(len(dealer_cards)):
-        print(a.card_art[dealer_cards[j]])
-
     print(f"Your final score: {int(player_score)}")
     if player_score == 21:
         print(a.black_jack)
@@ -120,6 +115,11 @@ def stand():
         random_card = random.choice(cards)
         dealer_cards.append(random_card)
         dealer_score += random_card
+
+    print(f"Dealer Cards:\n")
+
+    for j in range(len(dealer_cards)):  
+        print(a.card_art[dealer_cards[j]])
 
     print(f"Dealer final score: {int(dealer_score)}\n")
             
@@ -150,6 +150,10 @@ def blackjack():
 
     print(f"Your cards")
     print(f"{a.card_art[player_cards[0]]} {a.card_art[player_cards[1]]}")
+    if Ace:
+        if player_score > 21:
+            player_score -= 10
+            Ace = False
     print(f"Your current score = {player_score}")
 
     if player_score == 21:
