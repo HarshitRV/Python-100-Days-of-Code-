@@ -302,7 +302,3 @@ data = [
     }
 ]
 
-
-import random
-
-print(len(data))
