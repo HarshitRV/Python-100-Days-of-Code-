@@ -5,12 +5,14 @@ MILK = resources['milk']
 COFFEE = resources['coffee']
 MONEY = 0
 
-menu = ['l','c','e']
+menu = ['l', 'c', 'e']
+
 
 def report():
-    global WATER,MILK,COFFEE,MONEY
+    global WATER, MILK, COFFEE, MONEY
 
     return print(f"WATER: {WATER}\nMILK: {MILK}\nCOFFEE: {COFFEE}\n MONEY: {MONEY}\n")
+
 
 def available_resources(user_order):
     global WATER, MILK, COFFEE
@@ -27,6 +29,7 @@ def ordered_item(user_order):
         return 'cappuccino'
     else:
         return 'espresso'
+
 
 def check_resources(user_order):
     global WATER, COFFEE, MILK
@@ -49,7 +52,8 @@ def check_resources(user_order):
         print("\nNot enough water\n\n")
         return False
 
-def brew_coffee(user_order,money):
+
+def brew_coffee(user_order, money):
     global MONEY
 
     available_resources(user_order)
@@ -60,8 +64,8 @@ def brew_coffee(user_order,money):
     if money > MENU[user_order]['cost']:
         print(f"Here's your change {money - MENU[user_order]['cost']}$\n\n")
 
-def coffee_machine():
 
+def coffee_machine():
     off = False
 
     while not off:
@@ -79,10 +83,10 @@ def coffee_machine():
                 nickle = int(input("Enter nickles: "))
                 penny = int(input("Enter pennies: "))
 
-                money = quarter*0.25 + dime*0.10 + nickle*0.05 + penny*0.01
+                money = quarter * 0.25 + dime * 0.10 + nickle * 0.05 + penny * 0.01
 
                 if money >= MENU[user_order]['cost']:
-                    brew_coffee(user_order,money)
+                    brew_coffee(user_order, money)
 
         elif user_order == 'report' or user_order == 'r':
             report()
@@ -91,5 +95,6 @@ def coffee_machine():
             off = True
         else:
             print("Invalid Order\n")
+
 
 coffee_machine()
