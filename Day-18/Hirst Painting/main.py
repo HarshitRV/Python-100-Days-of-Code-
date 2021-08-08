@@ -6,7 +6,7 @@ turtle = Turtle()
 screen = Screen()
 colormode(255)
 turtle.speed("fastest")
-
+turtle.ht()
 
 # Setting the starting position for turtle
 HOME = (-275, -325)
@@ -51,5 +51,6 @@ def hirst_painting(radius):
 
 
 hirst_painting(20)
+
 
 screen.exitonclick()
