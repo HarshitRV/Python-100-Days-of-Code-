@@ -1,1 +1,0 @@
-[band-name.genrator.py](Day-1%20band-name.genrator.py)
