@@ -24,4 +24,3 @@ while not off:
                     CM.make_coffee(drink)
         else:
             print("Invalid Drink\n")
-
