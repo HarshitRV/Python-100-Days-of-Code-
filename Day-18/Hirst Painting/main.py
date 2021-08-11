@@ -24,6 +24,7 @@ for color in colors:
     new_color = (r, g, b)
     rgb_color.append(new_color)
 
+print(rgb_color)
 
 # Brings turtle back to starting position
 def level_up(up_by):
