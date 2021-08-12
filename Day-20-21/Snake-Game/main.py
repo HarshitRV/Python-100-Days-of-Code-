@@ -3,6 +3,9 @@ import time
 from snake import Snake
 from food import Food
 from score import Score
+from boundry import Boundry
+
+BOUNDRY = 279
 
 screen = Screen()
 screen.setup(600, 600)
@@ -11,6 +14,7 @@ screen.title("Snake Game")
 
 screen.tracer(0)
 
+boundry = Boundry()
 snake = Snake()
 food = Food()
 score = Score()
@@ -33,18 +37,23 @@ while game_is_on:
     if snake.head.distance(food) < 15:
         food.relocate()
         snake.extend_snake()
-        score.points()
+        score.add_points()
 
     # detecting collision with the wall
-    if snake.head.xcor() > 280 or snake.head.ycor() > 280 or snake.head.xcor() < -280 or snake.head.ycor() < -280:
+    if snake.head.xcor() > BOUNDRY or snake.head.ycor() > BOUNDRY or snake.head.xcor() < -BOUNDRY or snake.head.ycor() < -BOUNDRY:
         # print("Collison")
-        score.game_over()
         game_is_on = False
+        score.set_highscore()
+        # print(snake.head.ycor())
+        score.game_over()
     
     # detecting collision with the tail
     for segment in snake.snake[1:]:
         if snake.head.distance(segment) < 10:
             game_is_on = False
+            score.set_highscore()
+            # print(snake.head.ycor()) ###
             score.game_over()
+
 
 screen.exitonclick()

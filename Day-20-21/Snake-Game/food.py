@@ -12,4 +12,4 @@ class Food(Turtle):
         self.relocate()
     
     def relocate(self):
-        self.goto(random.randint(-280, 280),random.randint(-280, 280))
+        self.goto(random.randint(-273, 273),random.randint(-273, 273))
