@@ -1,12 +1,16 @@
 from turtle import Turtle
 import random
 
+INITIAL_SPEED = 5
+INCREMENT = 10
+
 
 COLORS = ["red", "orange", "blue", "purple", "green", "yellow"]
 
 class Car():
     def __init__(self):
         self.all_cars = []
+        self.initial_speed = INITIAL_SPEED
     
     def create_car(self):
         if random.randint(1,6) == 3:
@@ -20,4 +24,7 @@ class Car():
     
     def car_move(self):
         for car in self.all_cars:
-            car.fd(10)
+            car.fd(self.initial_speed)
+    
+    def speed_on_level_up(self):
+        self.initial_speed += INCREMENT

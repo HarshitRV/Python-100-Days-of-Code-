@@ -33,9 +33,10 @@ while game_is_on:
             score.end_game()
             game_is_on = False
     
-    #level up each time turtle reaches top and increase diffculty
+    #level up each time turtle reaches top and increase difficulty
     if player.ycor() > 280:
         score.level_up()
         player.goto(0, -280)
+        cars.speed_on_level_up()
 
 screen.exitonclick()
