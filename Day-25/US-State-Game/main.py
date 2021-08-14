@@ -1,5 +1,4 @@
-from os import stat
-from turtle import Turtle, Screen, st
+from turtle import Turtle, Screen
 import turtle
 import pandas
 
@@ -26,10 +25,12 @@ while game_is_on and correct != 50:
         for state in states_list:
             if state not in guessed_states:
                 missed_state.append(state)
-            states_to_learn = {
-                "To Learn": missed_state
-            }
-            new_data = pandas.DataFrame(states_to_learn)
+        states_to_learn = {
+            "To Learn": missed_state
+        }
+        new_data = pandas.DataFrame(states_to_learn)
+        save = input("Do you want the list of missed states?(y/n)").lower()
+        if save == "y":
             new_data.to_csv("missed_states.csv")
         break
 
