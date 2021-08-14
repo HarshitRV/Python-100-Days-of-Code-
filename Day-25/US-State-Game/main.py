@@ -29,8 +29,8 @@ while game_is_on and correct != 50:
             "To Learn": missed_state
         }
         new_data = pandas.DataFrame(states_to_learn)
-        save = input("Do you want the list of missed states?(y/n)").lower()
-        if save == "y":
+        save = screen.textinput(title="Need help?", prompt="Do you want the list of missed states?(y/n)").title()
+        if save == "Y":
             new_data.to_csv("missed_states.csv")
         break
 
