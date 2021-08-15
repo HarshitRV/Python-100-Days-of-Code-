@@ -15,16 +15,13 @@ turtle.shape(image)
 game_is_on = True
 correct = 0
 guessed_states = []
-missed_state = []
 while game_is_on and correct != 50:
     state_name = screen.textinput(title=f"{correct}/50 States Correct", prompt="What's another state name?").title()
     states_list = data.state.to_list()
 
     #Exit from the game
     if state_name == "Exit":
-        for state in states_list:
-            if state not in guessed_states:
-                missed_state.append(state)
+        missed_state = [state for state in states_list if state not in guessed_states] # List comprehension
         states_to_learn = {
             "To Learn": missed_state
         }
