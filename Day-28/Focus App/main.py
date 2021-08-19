@@ -1,6 +1,6 @@
 from tkinter import *
 import math
-import time
+from playsound import playsound
 # ---------------------------- CONSTANTS ------------------------------- #
 PINK = "#e2979c"
 RED = "#e7305b"
@@ -8,7 +8,7 @@ GREEN = "#9bdeac"
 YELLOW = "#f7f5dd"
 FONT_NAME = "Courier"
 WORK_MIN = 25
-SHORT_BREAK_MIN = 5
+SHORT_BREAK_MIN = 10
 LONG_BREAK_MIN = 20
 reps = 0
 check = ""
@@ -40,12 +40,15 @@ def on_start():
     if reps == 9:
        label.config(text="WELL DONE",fg=RED)
     elif reps % 8 == 0:
+        playsound("Music-Files/mixkit-positive-notification-951.wav")
         label.config(text="BREAK", fg=RED)
         countdown(long_break_min)
     elif reps % 2 == 0:
+        playsound("Music-Files/mixkit-positive-notification-951.wav")
         label.config(text="BREAK", fg=PINK)
         countdown(short_break_min)
     else:
+        playsound("Music-Files/mixkit-happy-bells-notification-937.wav")
         label.config(text="WORK", fg=GREEN)
         countdown(work_min)
            

@@ -5,11 +5,18 @@ nato_phonetic_data_frame = pandas.DataFrame(data)
 
 # Coverting the pandas dataframe into a dictionary | Dictionary Comprehension
 nato_dict = {
-   row.letter: row.code for (index, row) in nato_phonetic_data_frame.iterrows()
+   row.letter: row.code for (_, row) in nato_phonetic_data_frame.iterrows()
 }
 
-word = input("Enter the word: ").upper()
-
 # Converting the word into the NATO phonetic code list | List Comprehension
-nato_code_list = [nato_dict[letter] for letter in word]
-print(nato_code_list)
+def nato_converter():
+   word = input("Enter the word: ").upper()
+   try:
+      nato_code_list = [nato_dict[letter] for letter in word]
+   except KeyError:
+      print("Only letters are valid input numbers are not allowed")
+      nato_converter()
+   else:
+      print(nato_code_list)
+
+nato_converter()
