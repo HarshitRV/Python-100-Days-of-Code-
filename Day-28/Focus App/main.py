@@ -7,9 +7,9 @@ RED = "#e7305b"
 GREEN = "#9bdeac"
 YELLOW = "#f7f5dd"
 FONT_NAME = "Courier"
-WORK_MIN = 5
-SHORT_BREAK_MIN = 3
-LONG_BREAK_MIN = 4
+WORK_MIN = 25
+SHORT_BREAK_MIN = 5
+LONG_BREAK_MIN = 20
 reps = 0
 check = ""
 timer = None
@@ -33,9 +33,9 @@ def on_start():
 
     reps += 1
 
-    work_min = WORK_MIN 
-    short_break_min = SHORT_BREAK_MIN 
-    long_break_min = LONG_BREAK_MIN 
+    work_min = WORK_MIN * 60
+    short_break_min = SHORT_BREAK_MIN * 60
+    long_break_min = LONG_BREAK_MIN * 60
 
     if reps == 9:
        label.config(text="WELL DONE",fg=RED)
