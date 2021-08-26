@@ -52,4 +52,5 @@ Learnin Python through making 100 fun projects in 100 days.
 | Pomodoro Project Focus App                     | [View Code](https://github.com/lucifer00911/Python-100-Days-of-Code-/tree/main/Day-28/Focus%20App)                                      | [Repl](https://replit.com/@WOLVERINE0911/Pomodoro-App)|
 | Password Manager App                           | [View Code](https://github.com/lucifer00911/Python-100-Days-of-Code-/tree/main/Day-29/Password%20Manager%20App)                         | [Repl](https://replit.com/@WOLVERINE0911/Password-Manager-App#Password%20Manager%20App/main.py)|
 | Flash Card App                                 | [View Code](https://github.com/lucifer00911/Python-100-Days-of-Code-/tree/main/Day-31/Flash%20Card%20Project)                           | [Repl](https://github.com/lucifer00911/Python-100-Days-of-Code-/tree/main/Day-31/Flash%20Card%20Project)|
+| Quizzler App                                | [View Code](https://github.com/lucifer00911/Python-100-Days-of-Code-/tree/main/Day-34/quizzler-app)                           | [Repl](https://replit.com/@WOLVERINE0911/Quizzler-App#main.py)|
 
