@@ -1,11 +1,10 @@
 import requests
-from requests.api import put
-from requests.models import Response
+import os
 
 pixela_endpoint = "https://pixe.la/v1/users"
 
 USERNAME = "wolverine911"
-TOKEN = "efwgwrgtgbswcvtnnrrew"
+TOKEN = os.environ.get("pixelaToken")
 GRAPH_ID = "studygraph911"
 
 # POST
@@ -47,18 +46,18 @@ header = {
     "X-USER-TOKEN":TOKEN
 }
 
-# response_post = requests.post(url=post_endpoint,json=post_params,headers=post_header)
-# print(response_post.text)
+response_post = requests.post(url=post_endpoint,json=post_params,headers=header)
+print(response_post.text)
 
 # PUT
 put_endpoint = f"{pixela_endpoint}/{USERNAME}/graphs/{GRAPH_ID}/20210828"
 put_params = {
     "quantity":"7",
 }
-# response_put = requests.put(url=put_endpoint,json=put_params,headers=post_header)
+# response_put = requests.put(url=put_endpoint,json=put_params,headers=header)
 # print(response_put.text)
 
 #DELETE
 del_endpoint = f"{pixela_endpoint}/{USERNAME}/graphs/{GRAPH_ID}/20210828"
-response_del = requests.delete(url=del_endpoint,headers=header)
-print(response_del.text)
+# response_del = requests.delete(url=del_endpoint,headers=header)
+# print(response_del.text)
