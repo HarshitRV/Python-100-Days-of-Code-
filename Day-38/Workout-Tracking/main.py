@@ -4,7 +4,7 @@ import os
 
 now = datetime.now()
 
-sheet_endpoint = os.environ.get("sheetEndpoint")
+sheet_endpoint = "https://api.sheety.co/02222979d6ec07c1fcf5fdf2a8027db0/hrvWorkouts/workouts"
 NUTRI_ENDPOINT = "https://trackapi.nutritionix.com/v2/natural/exercise"
 nutrinoxToken = os.environ.get("nutrinoxToken")
 
