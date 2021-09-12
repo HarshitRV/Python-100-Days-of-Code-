@@ -142,3 +142,4 @@ cython_debug/
 *real_birthdays.csv
 *.zip
 test.py
+*.DS_Store
