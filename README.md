@@ -58,3 +58,4 @@ Learnin Python through making 100 fun projects in 100 days.
 | Top 100 Movies  -BEAUTIFUL SOUP MODULE                    | [View Code](https://github.com/lucifer00911/Python-100-Days-of-Code-/tree/main/Day-45/Beautiful-Soup)                           | |
 | Price-Drop-Alert  -BEAUTIFUL SOUP MODULE                    | [View Code](https://github.com/lucifer00911/Python-100-Days-of-Code-/tree/main/Day-47/Price-Drop-Alert)                           | |
 | Automating Website  -Selenium                    | [View Code](https://github.com/lucifer00911/Python-100-Days-of-Code-/tree/main/Day-48)                           | |
+| Instagram Follwer Bot  -Selenium                    | [View Code](https://github.com/lucifer00911/Python-100-Days-of-Code-/tree/main/Day-52/Insta-Follower-Bot)                           |[View Gist](https://gist.github.com/lucifer00911/1ae4f4ee074b9e58275154f7a6e07b2c) |
