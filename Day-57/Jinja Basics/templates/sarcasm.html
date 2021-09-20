@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Website</title>
+</head>
+<body>
+    <h1> 🚧 Under devlopment 🚧  </h1>
+    <h1>Enjoy Chandler Bing's Sarcastic Comments</h1>
+    {%for comment in sarcasm:%}
+        <p>S.No. {{comment["sno"]}}</p>
+        <h3>Sarcasm: {{comment["sarcasm"]}}</h3>
+    {% endfor %}
+</body>
+<footer>
+    <p>© {{year}} Harshit Kr Vishwakama.</p>
+</footer>
+</html>

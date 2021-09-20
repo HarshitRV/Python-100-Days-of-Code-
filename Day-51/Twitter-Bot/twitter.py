@@ -22,10 +22,12 @@ class Twitter:
             self.driver.find_element_by_xpath('/html/body/div/div/div/div[2]/main/div/div/div[2]/form/div/div[3]/div/div/span/span').click()
         except:
             self.driver.find_element_by_name("username").send_keys(self.email)
-            self.driver.find_element_by_xpath('/html/body/div/div/div/div[1]/div[2]/div/div/div/div/div/div[2]/div[2]/div/div/div[2]/div[2]/div[2]/div').click()
+            time.sleep(2)
+            self.driver.find_element_by_name("username").send_keys(Keys.ENTER)
             time.sleep(2)
             self.driver.find_element_by_name("password").send_keys(self.password)
-            self.driver.find_element_by_xpath('/html/body/div/div/div/div[1]/div[2]/div/div/div/div/div/div[2]/div[2]/div/div/div[2]/div[2]/div[2]/div').click()
+            time.sleep(2)
+            self.driver.find_element_by_name("password").send_keys(Keys.ENTER)
 
         time.sleep(2)
         self.write_tweet()
