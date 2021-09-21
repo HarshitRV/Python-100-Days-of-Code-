@@ -66,4 +66,4 @@ Learnin Python through making 100 fun projects in 100 days.
 | Instagram Follwer Bot  -Selenium                    | [View Code](https://github.com/lucifer00911/Python-100-Days-of-Code-/tree/main/Day-52/Insta-Follower-Bot)                           |[View Gist](https://gist.github.com/lucifer00911/1ae4f4ee074b9e58275154f7a6e07b2c) |
 | Flask Intro - Decorators                 | [View Code](https://github.com/lucifer00911/Python-100-Days-of-Code-/tree/main/Day-54/Flask)                           | |
 | Flask Routing and variables  | [View Code](https://github.com/lucifer00911/Python-100-Days-of-Code-/tree/main/Day-55)                           ||
-| Chandler Bing Sarcasm site -Dynamic Web Pages with Flask  | [View Code](https://github.com/lucifer00911/Python-100-Days-of-Code-/tree/main/Day-55)                           ||
+| Chandler Bing Sarcasm site -Dynamic Web Pages with Flask  | [View Code](https://github.com/lucifer00911/Python-100-Days-of-Code-/tree/main/Day-59/Chandler-Bing-Sarcasm-Site)                           ||
