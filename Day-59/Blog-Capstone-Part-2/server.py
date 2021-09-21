@@ -3,6 +3,7 @@ from flask import Flask, render_template, request, url_for
 import requests
 from werkzeug.utils import redirect
 from send_mail import Mail
+from sarcasm import Sarcasm
 
 app = Flask(__name__)
 
@@ -17,9 +18,13 @@ def home():
 def about():
     return render_template("about.html")
 
-@app.route("/post")
-def post():
-    return render_template("post.html")
+@app.route("/post/<sno>")
+def post(sno):
+    r = requests.get("https://pacific-garden-82759.herokuapp.com/sarcasm")
+    data = r.json()
+    sarcasm = Sarcasm(sno=int(sno), comment=data[int(sno)]['sarcasm'])
+
+    return render_template("post.html", comment=sarcasm)
 
 
 @app.route("/contact")

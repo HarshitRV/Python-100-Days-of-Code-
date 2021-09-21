@@ -40,7 +40,7 @@
                 <!-- Post preview-->
             {%  for i in range(length):  %}
                     <div class="post-preview">
-                        <a href="/post">
+                        <a href="/post/{{i}}">
                             <h2 class="post-title">#{{i+1}}</h2>
                             <h3 class="post-subtitle">{{sarcasm[i]["sarcasm"]}}</h3>
                         </a>
