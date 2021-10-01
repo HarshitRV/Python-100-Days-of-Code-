@@ -1,5 +1,9 @@
 import smtplib
 import os
+from flask_wtf import FlaskForm
+from wtforms import StringField, PasswordField, SubmitField
+from wtforms.fields.core import IntegerField
+from wtforms.validators import Email
 
 class Mail:
     def __init__(self, name, sender_email, phone, message):
@@ -24,3 +28,9 @@ class Mail:
                       Message: {self.message}"
             )
             c.close()
+
+class FormData(FlaskForm):
+    name = StringField(label="name")
+    email = StringField(label="email")
+    phone = IntegerField(label="phone")
+    message = StringField(label="message")

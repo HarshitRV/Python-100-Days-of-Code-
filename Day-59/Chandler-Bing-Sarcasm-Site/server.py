@@ -1,15 +1,14 @@
-from os import name
 from flask import Flask, render_template, request, url_for
 import requests
-from werkzeug.utils import redirect
-from send_mail import Mail
+from send_mail import Mail, FormData
 from sarcasm import Sarcasm
 
 app = Flask(__name__)
+app.config["SECRET_KEY"] = "somesecret"
 
 @app.route("/")
 def home():
-    r = requests.get("https://pacific-garden-82759.herokuapp.com/sarcasm")
+    r = requests.get("https://sarcasm-api.herokuapp.com/sarcasm")
     data = r.json()
 
     return render_template("index.html", sarcasm=data, length=len(data))
@@ -27,25 +26,14 @@ def post(sno):
     return render_template("post.html", comment=sarcasm)
 
 
-@app.route("/contact")
+@app.route("/contact", methods=["GET", "POST"])
 def contact_default(default="Contact Me"):
-    return render_template("contact.html", default=default)
+    form = FormData()
+    if form.validate_on_submit():
+        return f"Passed info are : name={form.name.data}, email={form.email.data},\
+                 phone={form.phone.data}, message={form.message.data}"
+    
+    return render_template("contact.html", default=default, form=form)
 
-# FORM LOGIN
-
-@app.route("/form")
-def form():
-    return render_template("form.html")
-
-@app.route("/login", methods=["POST"])
-def login():
-    if request.method == "POST":
-        data = request.form
-
-        mail = Mail(name=data['name'], sender_email=data['email'], phone=data['phone'], message=data['message'])
-        mail.send_mail()
-
-        return render_template("contact.html", default="Successfully sent your message!")
-    return render_template("contact.html", default="Message could not be sent :(")
 if __name__ == "__main__":
     app.run(debug=True)

@@ -38,23 +38,24 @@
                         <p>Want to get in touch? Fill out the form below to send me a message and I will get back to you as soon as possible!</p>
                         <div class="my-5">
                             
-                            <form id="contactForm" action="/login" method="POST">
-                                <div class="form-floating">
-                                    <input class="form-control" id="name" type="text" name="name" placeholder="Enter your name..." required />
-                                    <label for="name">Name</label>
-                                </div>
-                                <div class="form-floating">
-                                    <input class="form-control" id="email" type="email" name="email" placeholder="Enter your email..." required />
-                                    <label for="email">Email address</label>
-                                </div>
-                                <div class="form-floating">
-                                    <input class="form-control" id="phone" type="tel" name="phone" placeholder="Enter your phone number..."/>
-                                    <label for="phone">Phone Number</label>
-                                </div>
-                                <div class="form-floating">
-                                    <textarea class="form-control" id="message" name="message" placeholder="Enter your message here...(optional)" style="height: 12rem" required></textarea>
-                                    <label for="message">Message</label>
-                                <br />
+                            <form id="contactForm" action="{{url_for('contact_default')}}" method="POST">
+                                {{form.csrf_token}}
+                                
+                                
+                                {{form.name.label}} <br>
+                                {{form.name}} <br>
+                                
+                                {{form.email.label}} <br>
+                                {{form.email}} <br>
+                                
+                                {{form.phone.label}} <br>
+                                {{form.phone}} <br>
+                                
+                                {{form.message.label}} <br>
+                                {{form.message}}
+                               
+                                <br>
+                                <br>
                                 <!-- Submit Button-->
                                 <button class="btn btn-primary text-uppercase" id="submitButton" type="submit">Send</button>
                             </form>
