@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Rating</title>
+</head>
+<body>
+    <p>Book name: {{book.book_name}}</p>
+    <p>Current rating: {{book.book_rating}}</p>
+    <form action="/edit/{{id}}" method="POST">
+        <label for="edit">Edit Rating</label>
+        <input type="text" id="edit" name="edit_rating">
+        <button type="submit">Edit</button>
+    </form> 
+</body>
+</html>

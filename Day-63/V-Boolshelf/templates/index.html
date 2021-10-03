@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Library</title>
+</head>
+<body>
+<h1>My Library</h1>
+    <ul>
+        {%for book in books:%}
+            <li>Book: {{book.title}} - Author: {{book.author}} - Rating: {{book.rating}}</li>
+            <a href="/edit/{{book.id}}">Edit rating</a>
+            <a href="/delete/{{book.id}}">Delete Book</a>
+        {%else:%}
+            <p>Book list is empty</p>
+        {%endfor%}
+    </ul>
+    
+<a href="/add">Add New Book</a>
+</body>
+</html>
