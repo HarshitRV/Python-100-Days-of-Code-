@@ -19,7 +19,7 @@ def about():
 
 @app.route("/post/<sno>")
 def post(sno):
-    r = requests.get("https://pacific-garden-82759.herokuapp.com/sarcasm")
+    r = requests.get("https://sarcasm-api.herokuapp.com/sarcasm")
     data = r.json()
     sarcasm = Sarcasm(sno=int(sno), comment=data[int(sno)]['sarcasm'])
 
