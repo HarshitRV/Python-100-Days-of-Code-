@@ -48,9 +48,6 @@ def get_all_posts():
 @app.route("/post/<int:index>")
 def show_post(index):
     requested_post = BlogPost.query.get(index)
-    for blog_post in posts:
-        if blog_post.id == index:
-            requested_post = blog_post
     return render_template("post.html", post=requested_post)
 
 
@@ -62,6 +59,10 @@ def about():
 @app.route("/contact")
 def contact():
     return render_template("contact.html")
+
+@app.route("/edit")
+def edit_post(id):
+    pass
 
 if __name__ == "__main__":
     app.run(debug=True)
