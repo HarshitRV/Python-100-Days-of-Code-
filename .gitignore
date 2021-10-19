@@ -146,3 +146,4 @@ test.py
 *.db
 info.txt
 /Notes
+requirements.txt

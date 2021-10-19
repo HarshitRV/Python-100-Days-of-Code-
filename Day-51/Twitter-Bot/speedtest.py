@@ -6,7 +6,7 @@ class Speedtest:
         '''Takes one required parameter chrome driver path: type(str)'''
         self.path = path
         self.driver = webdriver.Chrome(executable_path = self.path)
-        self.driver.get("https://www.speedtest.net/")
+        self.driver.get("https://fast.com/")
         self.results = self.test_speed()
     
     def test_speed(self):
