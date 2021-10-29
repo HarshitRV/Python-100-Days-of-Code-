@@ -72,3 +72,4 @@ Learnin Python through making 100 fun projects in 100 days.
 | MyTopMovieList - CRUD App | [View Repo](https://github.com/HarshitRV/Movie-List-Site-MyTopMoviesList) 
 | Cafe API - REST API | [View Repo](https://github.com/HarshitRV/Cafe-API) 
 | RESTFUL BLOG WEBSITE | [View Repo](https://github.com/HarshitRV/Blog-Website-Flask) 
+| AUTHENTICATION & LOGIN WITH FLASK| [View Code](Day-68/Flask-Auth) 
