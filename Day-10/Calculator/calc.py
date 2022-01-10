@@ -41,3 +41,8 @@ class Calculator:
     def sqare_root(self, a):
         self.result =  math.sqrt(a)
         return self.result
+
+    def summation(self, a, b):
+        for i in range(int(a), int(b+1)):
+            self.result += i
+        return self.result

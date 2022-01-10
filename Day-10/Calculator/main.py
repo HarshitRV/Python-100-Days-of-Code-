@@ -12,9 +12,10 @@ operations = {
     "/" : c.div,
     "!" : c.factorial,
     "log": c.log,
-    "power":c.power,
-    "square root": c.sqare_root,
-    "exponent": c.exponent
+    "pow":c.power,
+    "sqrt": c.sqare_root,
+    "exp": c.exponent,
+    "summation": c.summation
 }
 
 def calculate():
@@ -53,12 +54,14 @@ def calculate():
                 single_input("Factorial", another)
             case "log":
                 single_input("Log", another)
-            case "power":
+            case "pow":
                 second_input("Power", another)
-            case "square root":
+            case "sqrt":
                 single_input("Square Root", another)
-            case "exponent":
+            case "exp":
                 single_input("Exponent", another)
+            case "summation":
+                second_input("Summation", another)
             case _:
                 print("Invalid Choice\n")
                 print("Recalculate...")
@@ -75,7 +78,7 @@ def calculate():
 
     def init():
         print("---Enter your choice---")
-        choice  = input("1: Another operation\n2: New Calculation (2)\n2: Exit: ")
+        choice  = input("1: Another operation\n2: New Calculation (2)\n3: Exit: ")
         print("\n")
 
         match choice:
