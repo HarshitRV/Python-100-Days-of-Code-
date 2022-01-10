@@ -1,66 +1,91 @@
+from calc import Calculator
 from art import logo
 
 print(logo)
 
-def sum(a,b):
-    return a+b
-
-def sub(a,b):
-    return a-b
-
-def mul(a,b):
-    return a*b
-
-def div(a,b):
-    return a/b
-
+c = Calculator()
 
 operations = {
-    "+" : sum,
-    "-" : sub,
-    "*" : mul,
-    "/" : div
+    "+" : c.add,
+    "-" : c.sub,
+    "*" : c.mul,
+    "/" : c.div,
+    "!" : c.factorial,
+    "log": c.log,
+    "power":c.power,
+    "square root": c.sqare_root,
+    "exponent": c.exponent
 }
 
-def calculator():
-    num1 = float(input("Enter first num : "))
+def calculate():
+    def second_input(message, another=False):
+        function = operations[op]
+        if another:
+            prev_num = c.result
+            result = function(prev_num, c.another_num)
+            print(f"{message} of {c.another_num} {op} {prev_num} =  {result}")
+            init()
+        else:
+            b = float(input("Enter second num: "))
+            result = function(a, b)
+            print(f"{message} of {a} {op} {b} = : {result}")
+
+    def single_input(message, another=False):
+        function = operations[op]
+        if another:
+            result = function(c.result)
+            print(f"{message} of {c.result} = : {result}")
+        else:
+            result = function(a)
+            print(f"{message} of {a} = : {result}")
+
+    def operation_performed(op, another=False):
+        match op:   
+            case "+":
+                second_input("Addition", another)
+            case "-":
+                second_input("Subtraction", another)
+            case "*":
+                second_input("Multiplication", another)
+            case "/":
+                second_input("Division", another)
+            case "!":
+                single_input("Factorial", another)
+            case "log":
+                single_input("Log", another)
+            case "power":
+                second_input("Power", another)
+            case "square root":
+                single_input("Square Root", another)
+            case "exponent":
+                single_input("Exponent", another)
+            case _:
+                print("Invalid Choice")
+
+
+    a = float(input("Enter first num: "))
 
     for operation in operations:
-        print(f"{operation}")
+        print(operation)
 
-    operation = input("Enter the symbol : ")
+    op = input("Enter opeation: ")
 
-    num2 = float(input("Enter second num : "))
+    operation_performed(op)
 
-    function = operations[operation]
+    def init():
+        choice  = input("Another operation (1)\nNew Calculation (2)\n Exit (3): ")
 
-    answer_1 = function(num1, num2)
+        match choice:
+            case "1":
+                global another_num 
+                c.another_num  = float(input("Enter another number : "))
+                op = input("Enter operation: ")
+                operation_performed(op, another=True)
+            case "2":
+                calculate()
+            case _:
+                print("Exiting....")
 
-    print(f"{num1} {operation} {num2} = {answer_1}")
+    init()
 
-
-    another_operation = input("Do you want to perform another operation? (y/n) : ")
-
-    answer = answer_1
-
-    while another_operation == "y":
-        operation = input("Enter the symbol : ")
-        num3 = float(input("Enter another number: "))
-
-        function = operations[operation]
-
-        pre_answer = answer
-
-        answer = function(answer, num3)
-
-
-        print(f"{pre_answer} {operation} {num3} = {answer}")
-
-        another_operation = input(f"Type 'y' to continue calculation on {answer}  or 'n' for new calculation : ")
-
-    if another_operation != 'y':
-        calculator()
-        
-    
-calculator()
-
+calculate()
