@@ -24,6 +24,15 @@ try:
     }
 
     def calculate():
+
+        a = float(input("Enter first num: "))
+
+        print("\n---Operations---")
+        for operation in operations:
+            print(operation)
+
+        c.operation = input("\nEnter operation: ")
+
         def second_input(message, another=False):
             function = operations[c.operation]
             if another:
@@ -90,24 +99,16 @@ try:
                     print("Recalculate...")
                     calculate()
 
-        a = float(input("Enter first num: "))
-
-        print("\n---Operations---")
-        for operation in operations:
-            print(operation)
-
-        c.operation = input("\nEnter operation: ")
-
         operation_performed(c.operation)
 
+       
         def calc_again():
             print("---Enter your choice---")
-            choice  = input("1: Another operation\n2: New Calculation (2)\n3: Exit: ")
+            choice  = input("1: Another operation\n2: New Calculation\n3: Exit: ")
             print("\n")
 
             match choice:
                 case "1":
-                    global another_num 
                     c.operation = input("Enter operation: ")
 
                     if c.operation in ['log', 'pow', 'sqrt', 'exp', 'summation']:
