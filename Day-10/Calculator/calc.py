@@ -1,10 +1,11 @@
 import math
-
+import datetime
 class Calculator:
     def __init__(self):
         self.result = 0
         self.another_num = 0
         self.operation = ""
+        self.time_ = datetime.datetime.now()
 
     def add(self, a, b):
         self.result = a + b
@@ -23,7 +24,7 @@ class Calculator:
         return self.result
 
     def log(self, a):
-        self.result = math.log(a)
+        self.result = round(math.log(a), 2)
         return self.result
 
     def factorial(self, a):
@@ -31,7 +32,7 @@ class Calculator:
         return self.result
 
     def exponent(self, a):
-        self.result =  math.exp(a)
+        self.result =  math.exp(a), 2
         return self.result
 
     def power(self, a, b):
