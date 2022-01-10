@@ -4,6 +4,7 @@ class Calculator:
     def __init__(self):
         self.result = 0
         self.another_num = 0
+        self.operation = ""
 
     def add(self, a, b):
         self.result = a + b
