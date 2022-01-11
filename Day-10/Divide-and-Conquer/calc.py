@@ -4,7 +4,19 @@ class Calculator:
     def __init__(self):
         self.result = 0
         self.another_num = 0
-        self.operation = ""
+        self.operator = ""
+        self.operations = {
+            "+" : self.add,
+            "-" : self.sub,
+            "*" : self.mul,
+            "/" : self.div,
+            "!" : self.factorial,
+            "log": self.log,
+            "pow": self.power,
+            "sqrt": self.sqare_root,
+            "exp": self.exponent,
+            "summation": self.summation
+        }
 
     def add(self, a, b):
         self.result = a + b
